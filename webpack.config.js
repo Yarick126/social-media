@@ -1,42 +1,21 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: "./src/index.jsx",
+  context: path.resolve(__dirname, 'src'),  
   mode: "development",
+  entry: "./main.jsx",
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "./main.js"
+    filename: "[name].[contenthash].js",
+    clean: true
     },
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
-      },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
-      {
-        test: /\.(?:js|mjs|cjs)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
-            ]
-          }
-        }
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
-      }
-    ]
-  }
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
+    new CleanWebpackPlugin()
+  ],
+  
 }
