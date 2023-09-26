@@ -1,0 +1,8 @@
+@import './_reset.scss';
+@import './variables';
+body {
+  font-family: $font;
+  font-size: 14px;
+  flood-color: $fontColor;
+}
+
