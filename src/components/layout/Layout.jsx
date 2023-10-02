@@ -6,11 +6,13 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
 
   return (
-  <section className={styles.Layout}>
-    <Header/>
-    <Outlet/>
-    <Footer/>
-  </section>
+    <section className={styles.Layout}>
+      <Header/>
+      <main>
+        <Outlet/>
+      </main>
+      <Footer/>
+    </section>
   )
 }
 

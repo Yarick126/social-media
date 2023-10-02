@@ -10,7 +10,10 @@ const isProd = !isDev
 module.exports = {
   devServer: {
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    }
   },
   context: path.resolve(__dirname, "src"),  
   mode: process.env.NODE_ENV,

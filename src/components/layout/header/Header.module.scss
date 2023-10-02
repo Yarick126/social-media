@@ -20,8 +20,8 @@ header{
     width: fit-content;
     column-gap: 2vw;
     img{
-      width: 13vw;
-      height: 13vh;
+      width: 200px;
+      height: 99px;
     }
     p{
       font-size: 12px;
@@ -65,6 +65,7 @@ header{
       flex-direction: row;
       column-gap: 1em;
       li{
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -76,26 +77,6 @@ header{
     }
   }
 
-  .downOfHeader{
-    a{
-      display: flex;
-      flex-direction: row;
-      font-weight: 100;
-      align-items: center;
-      column-gap: 5px;
-      color: #918e8e;
-      &:hover{
-        color: #ff9e75;
-      }
-
-    }
-    padding-left: 2em;
-    font-size: 16px;
-    display: flex;
-    flex-direction: row;
-    column-gap: 30px;
-    align-items: center;
-  }
 
   .hrLine{
     margin: 20px 40px;
