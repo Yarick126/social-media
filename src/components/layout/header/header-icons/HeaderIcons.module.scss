@@ -1,0 +1,25 @@
+ul{
+  margin-left: 1em;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  li{position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+      color: #804c3e;
+    }
+    .circle{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      color: white;
+      background-color: #ff9e75;
+      border-radius: 50%;
+    }
+  }
+}
