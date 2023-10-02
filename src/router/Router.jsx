@@ -9,9 +9,15 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Layout/>}>
         {ROUTES.map(route => {
+          route.path === '/' ?
           <Route
             key={route.path}
-            path={route.path === '/' ? index : route.path.substring(1)}
+            index
+            element={route.component}
+          /> :
+          <Route
+            key={route.path}
+            path={route.path.substring(1)}
             element={route.component}
           />
         })}

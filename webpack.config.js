@@ -9,10 +9,11 @@ const isProd = !isDev
 
 module.exports = {
   devServer: {
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   context: path.resolve(__dirname, "src"),  
-  mode: "development",
+  mode: process.env.NODE_ENV,
   entry: "./main.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),

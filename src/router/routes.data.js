@@ -27,7 +27,7 @@ export const ROUTES = [
     component: FeedBack
   },
   {
-    path: 'Stocks',
+    path: '/stocks',
     component: Stocks
   }
 ]
