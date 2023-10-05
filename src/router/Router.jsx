@@ -1,0 +1,23 @@
+import { BrowserRouter, Route , Routes } from "react-router-dom";
+import { ROUTES } from "./routes.data.js";
+import Layout from "../components/layout/Layout.jsx";
+import NotFound from "../components/screens/NotFound/NotFound.jsx";
+
+
+const Router = () => {
+
+  return (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        {ROUTES.map(route => 
+          route.path === '/' ?  <Route key={route.path} index element={route.component()} /> :
+                                <Route key={route.path} path={route.path.substring(1)} element={route.component()}/>
+        )}
+        <Route path="*" element={<NotFound/>}/>
+      </Route>
+    </Routes>
+  </BrowserRouter>)
+}
+
+export default Router
